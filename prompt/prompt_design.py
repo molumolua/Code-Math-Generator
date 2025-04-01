@@ -1,7 +1,9 @@
 base_answer_prompt="""
 You are a helpful python programmer.
-You will write python program to solve math problems. You will only write code blocks.
-Let's use python to solve math problems. Here are two examples how to do it.
+You will write python program to solve math problems.
+You must define the function named "solution" in the program and return the result.
+You should only write code blocks.
+Here are two examples how to do it.
 Question:The sphere with radius 1 and center $(0,0,1)$ rests on the $xy$-plane.  A light source is at $P = (0,-1,2).$  Then the boundary of the shadow of the sphere can be expressed in the form $y = f(x),$ for some function $f(x).$  Find the function $f(x).$
 ```
 import sympy as sp
