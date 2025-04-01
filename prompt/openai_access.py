@@ -10,12 +10,13 @@ from multiprocessing import Pool
 from tqdm import tqdm
 from zhipuai import ZhipuAI
 # client = OpenAI(base_url=BASE_URL,api_key=OPENAI_API_KEY)
-client = ZhipuAI(api_key="")
-def get_oai_completion(prompt,model,temperature,think=False,stream=False):
+client = ZhipuAI(api_key="9f84ec5e9d37435db1a9147f05762d76.DPyi2naeW1QbpUPD")
+def get_oai_completion(prompt,model,temperature,think=False,stream=False,top_p=0.3):
     try:
         response = client.chat.completions.create(
             model=model,
             temperature=temperature,
+            top_p=top_p,
             messages=[
                 # {"role": "system", "content": "You are a helpful assistant."},
                 {
@@ -88,7 +89,7 @@ def call_chatgpt(prompt,model):
     return ans
 
 
-def get_answer_from_chat_model(prompt, logger=None, eng='gpt-3.5-turbo', temperature=0.0, timeout=20, max_try=3,think=False):
+def get_answer_from_chat_model(prompt, logger=None, eng='gpt-3.5-turbo', temperature=0.0, timeout=20, max_try=3,think=False,top_p=0.3):
     """
     向聊天模型发送单个请求，并返回回答。
 
@@ -118,7 +119,7 @@ def get_answer_from_chat_model(prompt, logger=None, eng='gpt-3.5-turbo', tempera
             logger.error(f"Max retries reached for question: {prompt}") if logger else None
             return ""
         try:
-            return  get_oai_completion(prompt,eng,temperature,think)
+            return  get_oai_completion(prompt,eng,temperature,think,top_p=top_p)
         except Exception as e:
             num_exception += 1
             sleep_time = min(num_exception, 2)

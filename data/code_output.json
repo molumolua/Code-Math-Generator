@@ -1,0 +1,18 @@
+[
+    {
+        "problem": "Chandra has four bowls.  Each one is a different color (red, blue, yellow, green).  She also has exactly one glass the same color as each bowl.  If she chooses a bowl and a glass from the cupboard, how many pairings are possible?  One such pairing is a blue bowl and a yellow glass.",
+        "solution": "Chandra has four bowls, each a different color: red, blue, yellow, and green. She also has four glasses, each matching the color of a bowl. The task is to determine the number of possible pairings when choosing one bowl and one glass.\n\n1. Chandra has 4 bowls and 4 glasses.\n2. Each bowl can be paired with any of the 4 glasses.\n3. The number of pairings is calculated by multiplying the number of bowls by the number of glasses.\n4. Therefore, the total number of pairings is \\(4 \\times 4 = 16\\).\n\nThus, the number of possible pairings is \\(\\boxed{16}\\).",
+        "code_answer": "To solve this problem, we can use the basic principle of counting. Chandra has four choices for the bowl and for each bowl, she has four choices for the glass (since each glass is a different color and matches one of the bowls). Therefore, the total number of pairings is the product of the number of choices for the bowl and the number of choices for the glass.\n\nHere's the Python code to calculate the number of pairings:\n\n```python\n# Number of bowls\nnumber_of_bowls = 4\n\n# Number of glasses\nnumber_of_glasses = 4\n\n# Total number of pairings\ntotal_pairings = number_of_bowls * number_of_glasses\n\nprint(total_pairings)\n```",
+        "answer": "16",
+        "execution_result": null,
+        "code_check": 0
+    },
+    {
+        "problem": "The distance between two cities on a map is 15 inches. If the scale is 0.25 inches = 3 miles, how many miles apart are the actual cities?",
+        "solution": "The distance between two cities on a map is 15 inches, and the scale is 0.25 inches = 3 miles. To find the actual distance between the cities, we can follow these steps:\n\n1. Determine how many miles 1 inch on the map represents:\n   \\[\n   \\text{Miles per inch} = \\frac{3 \\text{ miles}}{0.25 \\text{ inches}} = 12 \\text{ miles per inch}\n   \\]\n\n2. Calculate the actual distance for 15 inches on the map:\n   \\[\n   \\text{Actual distance} = 15 \\text{ inches} \\times 12 \\text{ miles per inch} = 180 \\text{ miles}\n   \\]\n\nThus, the actual distance between the two cities is \\boxed{180} miles.",
+        "code_answer": "```python\ndef solution():\n    # Given values\n    map_distance = 15  # distance on the map in inches\n    scale = 0.25  # scale in inches\n    scale_distance = 3  # actual distance corresponding to the scale in miles\n\n    # Calculate the actual distance\n    actual_distance = (map_distance / scale) * scale_distance\n\n    return actual_distance\n\n# Call the function and print the result\nprint(solution())\n```",
+        "answer": "180",
+        "execution_result": null,
+        "code_check": 0
+    }
+]
